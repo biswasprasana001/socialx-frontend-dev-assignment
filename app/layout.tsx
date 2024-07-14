@@ -59,7 +59,7 @@ export default function RootLayout({
             </div>
           </nav>
         </header>
-        <main className="pt-10">{children}</main>
+        <main>{children}</main>
         <footer className="py-8" style={{ width: '90%', margin: '0 auto' }}>
           <div className="container mx-auto flex justify-center space-x-32">
             <div className="flex space-x-16">
