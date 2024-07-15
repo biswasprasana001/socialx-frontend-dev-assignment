@@ -1,6 +1,15 @@
 // app\layout.tsx
-
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Your App Name",
+  description: "Your app description",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -11,13 +20,13 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       </head>
-      <body>
-        <header className="bg-background: #FFFFFF text-gray-800 font-montserrat weight-400 size-12px">
+      <body className={inter.className}>
+        <header className="bg-white text-gray-800 font-montserrat weight-400 size-12px">
           <nav className="mx-auto flex justify-end items-center h-10 px-4">
             <ul className="flex space-x-4">
               <li className="hover:text-gray-400 cursor-pointer">Return</li>
               <li className="hover:text-gray-400 cursor-pointer">Help</li>
-              <li className="hover:text-gray-400 cursor-pointer" >Register/Sign in</li>
+              <li className="hover:text-gray-400 cursor-pointer">Register/Sign in</li>
             </ul>
           </nav>
           <nav className="bg-white border-t border-gray-200 w-full h-20">
@@ -29,7 +38,7 @@ export default function RootLayout({
                   </svg>
                 </a>
                 <div className="flex items-center space-x-4 w-full justify-around">
-                  <a href="/shop" className="text-gray-600 px-4 py-2 rounded-md hover:text-gray-400">SHOP</a>
+                  <a href="/shop" className="text-gray-600 hover:text-gray-400">SHOP</a>
                   <a href="/essentials" className="text-gray-600 hover:text-gray-400">ESSENTIALS</a>
                   <div className="flex flex-col items-center">
                     <a href="/" style={{ color: '#E2342D', fontFamily: 'Monotype Corsiva', fontStyle: 'italic', fontSize: '25px', fontWeight: 'bold' }}>Macc</a>
@@ -66,7 +75,8 @@ export default function RootLayout({
               <div className="flex flex-col items-center">
                 <a href="/" style={{ color: '#E2342D', fontFamily: 'Monotype Corsiva', fontStyle: 'italic', fontSize: '25px', fontWeight: 'bold' }}>Macc</a>
                 <a href="/" style={{ color: '#004197', fontFamily: 'Monotype Corsiva', fontStyle: 'italic', fontSize: '25px', fontWeight: 'bold' }}>Essentials</a>
-              </div>              <ul className="flex flex-col space-y-2">
+              </div>
+              <ul className="flex flex-col space-y-2">
                 <li><a href="/" className="hover:text-gray-400">Home</a></li>
                 <li><a href="/collection" className="hover:text-gray-400">Collection</a></li>
                 <li><a href="/products" className="hover:text-gray-400">Products</a></li>
